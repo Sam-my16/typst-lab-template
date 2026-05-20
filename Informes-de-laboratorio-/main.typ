@@ -13,8 +13,8 @@
   ]
 ]
 
-= Introducción
-Acá empieza la introducción de tu informe.
+#include "secciones/01_introduccion.typ"
+
 
 = Desarrollo experimental
 Para las unidades físicas y errores (lo que hacías con `siunitx`), Typst usa texto plano de forma directa y elegante. Las incertidumbres se escriben con el símbolo `±` y la coma decimal funciona nativamente:
