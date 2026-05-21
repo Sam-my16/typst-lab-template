@@ -1,11 +1,14 @@
 #let caratula(
+  universidad: "",
+  facultad:"",
   titulo: "",
-  carrera: "",
+  tipo_de_documento: "",
+  laboratorio: "",
   autor: "",
   director: "",
   codirector: "",
   lugar: "Buenos Aires, " + datetime.today().display("[Year]"),
-  logo-path: "../documento/logofcen.pdf", // Ruta al logo de Exactas
+  logo-path: "../imagenes/logofcen.pdf", // Ruta al logo de Exactas
 ) = {
 
   // Configuración de página limpia (sin números de página en la portada)
@@ -31,8 +34,8 @@
     
     // 2. Encabezado institucional
     #text(size: 14pt)[
-      #smallcaps[Universidad de Buenos Aires] \ \
-      #smallcaps[Facultad de Ciencias Exactas y Naturales]
+      #smallcaps[#universidad] \ \
+      #smallcaps[#facultad]
     ]
     
     // Espacio gigante antes del título (los 7.0cm de tu LaTeX)
@@ -44,7 +47,7 @@
     #v(2cm)
     
     // 4. Tipo de documento y Carrera
-    #text(size: 14pt)[Tesis de #carrera]
+    #text(size: 14pt)[#tipo_de_documento]
     
     #v(2cm)
     
@@ -55,7 +58,7 @@
 
   
   // 6. Directores y ubicación (abajo a la izquierda)
-  align(left)[
+  align(center)[
     #text(size: 12pt)[
       *Director:* #director \
       #v(0.2cm)
