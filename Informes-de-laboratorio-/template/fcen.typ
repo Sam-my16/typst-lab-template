@@ -31,18 +31,18 @@
   show link: set text(fill: blue)
   
   // 5. Encabezado del Informe
-  align(center)[
-    #v(-10mm)
-    #text(size: 14pt, weight: "bold")[#titulo]
+  //align(center)[
+    //#v(-10mm)
+   // #text(size: 14pt, weight: "bold")[#titulo]
     
-    #v(5mm)
-    #text(size: 12pt)[#autores.join(", ", last: " y ")] \
-    #text(size: 11pt, style: "italic")[#grupo] \
-    #text(size: 11pt, style: "italic")[#institucion]
+   // #v(4mm)
+   // #text(size: 12pt)[#autores.join(", ", last: " y ")] \
+   // #text(size: 11pt, style: "italic")[#grupo] \
+    //#text(size: 11pt, style: "italic")[#institucion]
     
-    #v(5mm)
-    #line(length: 100%, stroke: 0.5pt + gray)
-  ]
+    //#v(5mm)
+    //#line(length: 100%, stroke: 0.5pt + gray)
+  //]"
   
   body
 }

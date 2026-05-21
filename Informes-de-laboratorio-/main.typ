@@ -1,17 +1,30 @@
 #import "template/fcen.typ": informe-labo
-#import "config/metadata.typ"
 
+#import "documento/caratula.typ":caratula
+
+#import "config/metadata.typ": *
+
+#caratula(
+  titulo: titulo,
+  carrera: carrera,
+  autor: autor,
+  director: director,
+  codirector: co_director,
+)
 
 #show: informe-labo.with(
-  titulo: "Título del Experimento",
-  autores: ("Autor 1", "Autor 2"),
-  grupo: "Grupo 12",
+  titulo: titulo,         // Usa el "titulo" que viene de metadata
+  autores: (autor,),     // Si solo hay un autor
+  grupo: grupo,      
+  institucion: institucion
 )
 
 #align(center)[
   #block(width: 85%)[
     #set par(justify: true)
-    *Resumen:* Acá va el abstract del informe...
+    *Resumen* 
+
+    Acá va el abstract del informe...
   ]
 ]
 
@@ -19,6 +32,8 @@
 
 
 = Desarrollo experimental
+
+ESTO ES UN EJEMPLO
 Para las unidades físicas y errores (lo que hacías con `siunitx`), Typst usa texto plano de forma directa y elegante. Las incertidumbres se escriben con el símbolo `±` y la coma decimal funciona nativamente:
 
 Como se ve en la @esquema, medimos los componentes...
@@ -45,11 +60,9 @@ Presentamos los valores medidos en la @valores:
 
 = Conclusiones
 El comportamiento del sistema fue el esperado...
+esto esta funcionando, dime la verdad
 
-// Bibliografía nativa al final del documento (Reemplaza a thebibliography)
-
-
-#bibliography("bibliografia.bib", title: "Bibliografía", full: true, style: "apa")
+#bibliography("documento\bibliografia.bib", title: "Bibliografía", full: true, style: "apa")
 
 
 
