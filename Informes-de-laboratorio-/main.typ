@@ -1,4 +1,6 @@
 #import "template/fcen.typ": informe-labo
+#import "config/metadata.typ"
+
 
 #show: informe-labo.with(
   titulo: "Título del Experimento",
@@ -45,6 +47,10 @@ Presentamos los valores medidos en la @valores:
 El comportamiento del sistema fue el esperado...
 
 // Bibliografía nativa al final del documento (Reemplaza a thebibliography)
-= Bibliografía
-+ #link("https://exactas.uba.ar")[Referencia 1]
-+ #link("https://github.com")[Referencia 2]
+
+
+#bibliography("bibliografia.bib", title: "Bibliografía", full: true, style: "apa")
+
+
+
+
