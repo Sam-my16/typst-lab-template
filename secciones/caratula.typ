@@ -8,7 +8,8 @@
   director: "",
   codirector: "",
   lugar: "Buenos Aires, " + datetime.today().display("[Year]"),
-  logo-path: "../imagenes/logofcen.pdf", // Ruta al logo de Exactas
+  // Para mostrar el logo, pasá logo-path (ej: "../imagenes/logofcen.pdf")
+  logo-path: none,
 ) = {
 
   // Configuración de página limpia (sin números de página en la portada)
@@ -26,7 +27,6 @@
 
     #v(-1cm)
     #if logo-path != none {
-      // Ajustamos el ancho a los 2.6cm que tenías en LaTeX
       image(logo-path, width: 5cm)
     }
     
