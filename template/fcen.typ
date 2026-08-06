@@ -1,10 +1,12 @@
 #let informe-labo(body) = {
   set page(
     paper: "a4",
-    margin: (top: 2cm, bottom: 2cm, left: 3cm, right: 3cm),
+    margin: (rest:2.54cm),
     numbering: "1",
   )
 
+  set math.equation(numbering: "(1)")
+  
   set text(lang: "es", size: 12pt, font: "New Computer Modern")
 
   set heading(numbering: "1.")
@@ -14,7 +16,7 @@
   show figure.caption: it => [
     #set text(size: 10pt)
     #block(width: 90%, align(center)[
-      **#it.supplement #it.counter.display()**: #it.body
+       #strong([#it.supplement #it.counter.display(it.numbering):]) #it.body
     ])
   ]
 
